@@ -3,7 +3,7 @@ Updated modules
 
 Here is the list of updated modules:
 
-1. ovirt_external_provider.py
+1. ovirt_external_provider_26.py
 
 - Support authentication_keys for os_volume external provider.
   Will be added in the Ansible 2.6.
