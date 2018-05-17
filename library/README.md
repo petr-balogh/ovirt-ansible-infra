@@ -1,13 +1,10 @@
 Updated modules
 ===============
 
-Here is list of updated modules:
+Here is the list of updated modules:
 
-1. ovirt_auth.py
+1. ovirt_external_provider.py
 
- - Support to pass hostname to ovirt_auth module. [PR](https://github.com/ansible/ansible/pull/40610)
-
-2. ovirt_hosts.py
-
- - Workaround for the following issue: [PR](https://github.com/ansible/ansible/pull/44726)
-   Removed call for deprecate.
+- Support authentication_keys for os_volume external provider.
+  Will be added in the Ansible 2.6.
+  In the Ansible it's covered here: [PR](https://github.com/ansible/ansible/pull/40294)
