@@ -232,7 +232,7 @@ The items in `external_providers` list variable can contain following parameters
 | data_center            | UNDEF               | Name of the data center where provider should be attached. Applicable for type <i>os_volume</i>. |
 | authentication_keys    | UNDEF               | List of authentication keys. Each key is represented by dict like {'uuid': 'my-uuid', 'value': 'secret value'}. Added in ansible 2.6.  Applicable for type <i>os_volume</i>. |
 
-More information about the parameters can be found in the [ovirt_external_providers](http://docs.ansible.com/ansible/ovirt_external_providers_module.html) module documentation.
+More information about the parameters can be found in the [ovirt_external_provider](http://docs.ansible.com/ansible/ovirt_external_provider_module.html) module documentation.
 
 Example Playbook
 ----------------
