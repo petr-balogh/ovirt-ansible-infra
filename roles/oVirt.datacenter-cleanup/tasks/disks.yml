@@ -10,8 +10,6 @@
     id: "{{ ovirt_item.id }}"
     auth: "{{ ovirt_auth }}"
   with_items: "{{ ovirt_disks }}"
-  when:
-    - ovirt_item.name != 'OVF_STORE'
-    - not hosted_engine or (ovirt_item.id != hosted_engine_vm_disk_id)
+  when: ovirt_item.name != 'OVF_STORE'
   loop_control:
     loop_var: ovirt_item

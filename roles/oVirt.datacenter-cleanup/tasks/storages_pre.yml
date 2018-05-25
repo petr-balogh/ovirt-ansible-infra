@@ -1,19 +1,17 @@
 ---
-- name: Find existing Storage Domains in Datacenter
+- name: Find existing Storage Domains
   ovirt_storage_domains_facts:
     auth: "{{ ovirt_auth }}"
     pattern: "datacenter={{ data_center_name }}"
 
-- name: Remove Storage Domains apart from master and hosted_engine storage (if HE is used)
+- name: Remove Storage Domains apart from master
   ovirt_storage_domains:
     state: absent
     id: "{{ ovirt_item.id }}"
     auth: "{{ ovirt_auth }}"
     format: "{{ format_storages }}"
   with_items: "{{ ovirt_storage_domains }}"
-  when:
-    - not ovirt_item.master
-    - not hosted_engine or ovirt_item.id != hosted_engine_sd_id
+  when: not ovirt_item.master
   loop_control:
     loop_var: ovirt_item
 
@@ -24,8 +22,6 @@
     data_center: "{{ data_center_name }}"
     auth: "{{ ovirt_auth }}"
   with_items: "{{ ovirt_storage_domains }}"
-  when:
-    - ovirt_item.master
-    - not hosted_engine
+  when: ovirt_item.master
   loop_control:
     loop_var: ovirt_item
